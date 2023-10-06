@@ -23,6 +23,7 @@ ext {
 
 dependencies {
     testImplementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-model:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-junit5:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}",
@@ -32,6 +33,8 @@ dependencies {
             "org.assertj:assertj-core:${assertJVersion}",
             "org.projectlombok:lombok:${lombokVersion}",
             "ch.qos.logback:logback-classic:${logbackVersion}"
+    testImplementation 'junit:junit:4.13.1'
+    "junit:junit:${junitVersion}"
 }
 
 test {
