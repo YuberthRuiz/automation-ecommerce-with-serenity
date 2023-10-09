@@ -10,11 +10,11 @@ public class LoginPageSteps extends ScenarioActor {
     private LoginPage loginPage;
 
     @Step
-    public void enterInLogin() {loginPage.clickLoginButton();}
-    @Step
     public void isOnLoginPage(){
         loginPage.open();
     }
+    @Step
+    public void enterInLogin() {loginPage.clickLoginButton();}
 
     @Step
     public void loginAsUser(){

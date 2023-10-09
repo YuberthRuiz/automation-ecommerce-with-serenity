@@ -11,6 +11,7 @@ public class LoginStepDefinitions {
     @Given("the user enter to the luma ecommerce site")
     public void the_user_enter_to_the_luma_ecommerce_site() {
         loginPageSteps.isOnLoginPage();
+        loginPageSteps.enterInLogin();
         loginPageSteps.loginAsUser();
         loginPageSteps.userShouldBeLogin();
     }
