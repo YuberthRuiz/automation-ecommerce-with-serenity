@@ -1,5 +1,5 @@
 plugins {
-    id "net.serenity-bdd.serenity-gradle-plugin" version "4.0.0-beta-3"
+    id "net.serenity-bdd.serenity-gradle-plugin" version "4.0.14"
     id 'java'
 }
 
@@ -9,11 +9,13 @@ repositories {
     mavenCentral()
 }
 
-sourceCompatibility = 16
-targetCompatibility = 16
+java {
+    sourceCompatibility = JavaVersion.VERSION_18
+}
+//targetCompatibility = 18
 
 ext {
-    slf4jVersion = '1.7.7'
+    slf4jVersion = '2.0.9'
     serenityCoreVersion = '4.0.1'
     junitVersion = '5.10.0'
     assertJVersion = '3.23.1'
@@ -22,7 +24,9 @@ ext {
 }
 
 dependencies {
-    testImplementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
+    testImplementation 'io.cucumber:cucumber-junit:7.14.0',
+            "net.serenity-bdd:serenity-cucumber:4.0.14",
+            "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-model:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-junit5:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
@@ -32,6 +36,7 @@ dependencies {
             "org.junit.jupiter:junit-jupiter-engine:${junitVersion}",
             "org.assertj:assertj-core:${assertJVersion}",
             "org.projectlombok:lombok:${lombokVersion}",
+            "org.slf4j:slf4j-nop:${slf4jVersion}"
             "ch.qos.logback:logback-classic:${logbackVersion}"
     testImplementation 'junit:junit:4.13.1'
     "junit:junit:${junitVersion}"

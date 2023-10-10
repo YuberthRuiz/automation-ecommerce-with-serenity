@@ -11,7 +11,6 @@
 
     <properties>
         <serenity.version>4.0.12</serenity.version>
-        <serenity.cucumber.version>4.0.12</serenity.cucumber.version>
         <junit5.version>5.10.0</junit5.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <encoding>UTF-8</encoding>
@@ -80,11 +79,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-        <groupId>net.serenity-bdd</groupId>
-        <artifactId>serenity-cucumber</artifactId>
-        <version>${serenity.cucumber.version}</version>
-        <scope>test</scope>
-    </dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-cucumber</artifactId>
+            <version>${serenity.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions(
         plugin = {"pretty"}
-        ,features = "src/test/resources/features"
+        ,features = "src/test/resources/features/login_in_the_ecommerce.feature"
         ,glue={"StepDefinitions"}
 )
 public class LoginRunner {
