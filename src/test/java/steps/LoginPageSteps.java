@@ -1,6 +1,6 @@
-package Steps;
+package steps;
 
-import UIPages.LoginPage;
+import uiPages.LoginPage;
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.core.steps.ScenarioActor;
@@ -20,9 +20,9 @@ public class LoginPageSteps extends ScenarioActor {
     @Step("#actor click in the login button")
     public void enterInLogin() {loginPage.clickLoginButton();}
 
-    @Step("#actor entered a valid credential")
-    public void loginAsUser(){
-        loginPage.doLogin();
+    @Step("#actor entered the credentials")
+    public void loginAsUser(String user, String password){
+        loginPage.doLogin(user,password);
     }
 
     @Step("#actor should see the title after login")
@@ -30,4 +30,8 @@ public class LoginPageSteps extends ScenarioActor {
         assertTrue(loginPage.accountPageIsVisible().contains("Welcome"));
     }
 
+    @Step("#actor should see the error message")
+    public void userShouldSeeErrorMessage(){
+        assertTrue(loginPage.messageError().contains("The account sign-in was incorrect"));
+    }
 }

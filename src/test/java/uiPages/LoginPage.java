@@ -1,4 +1,4 @@
-package UIPages;
+package uiPages;
 
 import net.serenitybdd.annotations.DefaultUrl;
 import net.serenitybdd.core.annotations.findby.By;
@@ -10,13 +10,17 @@ public class LoginPage extends PageObject {
         $(By.partialLinkText("Sign")).waitUntilEnabled();
         $(By.partialLinkText("Sign")).click();
     }
-    public void doLogin(){
-        $("#email").sendKeys("yuberth@gmail.com");
-        $("#pass").sendKeys("Testing123");
+    public void doLogin(String user, String password){
+        $("#email").sendKeys(user);
+        $("#pass").sendKeys(password);
         $("#send2").click();
     }
 
     public String accountPageIsVisible(){
         return $("div.panel.header ul.header.links li.greet.welcome > span.logged-in").getText();
+    }
+
+    public String messageError(){
+        return $("div.message-error.error.message").getText();
     }
 }

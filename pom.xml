@@ -84,6 +84,12 @@
             <version>${serenity.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>net.serenitybdd.starter</groupId>
+            <artifactId>serenity-junit-starter</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
