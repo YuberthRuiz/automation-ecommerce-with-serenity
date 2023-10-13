@@ -21,6 +21,6 @@ public class LoginPage extends PageObject {
     }
 
     public String messageError(){
-        return $("div.message-error.error.message").getText();
+        return $("div:nth-child(2) div.messages > div.message-error.error.message").getText();
     }
 }
